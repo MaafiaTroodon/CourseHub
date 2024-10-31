@@ -1,0 +1,44 @@
+/*
+    CSCI 2170: Introduction to Server-Side Scripting
+    (Fall Semester 2024)
+    Assignment 3 (styles.css)
+*/
+
+/* Custom Styles */
+body.bg-light-grey {
+  background-color: #f8f9fa; /* Very light grey background */
+}
+
+.navbar,
+.footer {
+  background-color: white !important; /* White header and footer */
+  box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+h1,
+h2,
+h3 {
+  color: #ffcb00; /* Yellow for headings */
+  font-weight: bold;
+}
+.btn-brand {
+  background-color: #ffcb00; /* Yellow button */
+  color: #000; /* White text */
+  border: none; /* No border */
+}
+
+.btn-brand:hover {
+  background-color: #ffcb00; /* Yellow button */
+  color: #000; /* White text */
+  border: none; /* No border */
+}
+
+.table,
+.card {
+  background-color: #fff; /* White background for tables and cards */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Light shadow */
+}
+
+.text-dark {
+  color: #000 !important; /* Black text */
+}
