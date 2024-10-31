@@ -5,12 +5,9 @@
     Assignment 3 (db_config.php)
 */
 
-// Database connection parameters for university_schedule (user validation)
+// Database connection parameters for dalhousie_timetable
 define("DB_HOST", "localhost");
 define("DB_USER", "root"); // Your DB username
 define("DB_PSWD", ""); // Your DB password
-
-// Separate database names
-define("USER_DB", "university_schedule");
-define("COURSE_DB", "dalhousie_timetable");
+define("DB_NAME", "dalhousie_timetable"); // Consolidate into a single database
 ?>

@@ -9,7 +9,7 @@ session_start();
 $loggedIn = isset($_SESSION['user_id']);
 include('../includes/header.php');
 ?>
-
+<div id="notification" class="notification"></div>
 <main class="container">
     <h1 class="mb-4">Available Courses</h1>
     <div class="table-responsive">
@@ -56,45 +56,46 @@ include('../includes/header.php');
 </main>
 
 <script>
+function showNotification(message, type = 'success') {
+    const notification = document.getElementById('notification');
+    notification.innerText = message;
+    notification.className = 'notification show ' + (type === 'error' ? 'error' : 'success');
+
+    // Show the notification for 3 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 3000); // Hide after 3 seconds
+}
 
 function addToSchedule(courseCode) {
-    const formData = new URLSearchParams();
-    formData.append('course_code', courseCode);
-
     fetch('../includes/add_course.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: formData
+        body: 'course_code=' + encodeURIComponent(courseCode)
     })
-    .then(response => response.text()) // Get the raw response text
+    .then(response => response.text())
     .then(text => {
-        console.log('Raw response:', text); // Log the raw response
-        let data;
         try {
-            data = JSON.parse(text); // Attempt to parse JSON if valid
-        } catch (e) {
-         
-            alert('An error occurred. Please check the console for details.');
-            return;
-        }
-        if (data.success) {
-            alert(data.message);
-        } else {
-            alert(data.error);
+            const data = JSON.parse(text);
+            if (data.success) {
+                showNotification(data.message, 'success'); // Show success notification
+            } else {
+                showNotification(data.error, 'error'); // Show error notification
+            }
+        } catch (error) {
+            console.error('JSON parsing error:', error);
+            showNotification('Unexpected response format. Check the console for details.', 'error');
         }
     })
     .catch(error => {
         console.error('Fetch error:', error);
-        alert('An error occurred. Please check the console for details.');
+        showNotification('An error occurred. Please check the console for details.', 'error');
     });
 }
-
 </script>
 
-
-</script>
 
 <?php
 include('../includes/footer.php');

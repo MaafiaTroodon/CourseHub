@@ -1,32 +1,182 @@
 [
     {
-        "course_code": "CSCI 2110",
-        "name": "Data Structures",
-        "schedule": "Tue, Thu 9:00 AM - 10:30 AM",
-        "instructor": "Dr. Srini Sampalli"
+        "course_code": "CSCI 1105",
+        "name": "Intro to Computer Programming",
+        "schedule": "Tue, Thu 10:05 AM - 11:25 AM",
+        "instructor": "M. Barrera Machuca"
     },
     {
-        "course_code": "CSCI 2141",
-        "name": "Databases",
-        "schedule": "Mon, Wed 10:00 AM - 11:30 AM",
-        "instructor": "Bharat Shankaranarayanan"
+        "course_code": "CSCI 1107",
+        "name": "Social Computing",
+        "schedule": "Mon, Wed 2:35 PM - 3:55 PM",
+        "instructor": "J. Blustein"
     },
     {
-        "course_code": "CSCI 2201",
-        "name": "Information Security",
-        "schedule": "Tue, Thu 10:00 AM - 11:30 AM",
-        "instructor": "Dr. Israat Haque"
+        "course_code": "CSCI 1120",
+        "name": "Intro to Computer Systems",
+        "schedule": "Mon, Wed, Fri 12:35 PM - 1:25 PM",
+        "instructor": "C. DeGagne"
     },
     {
-        "course_code": "CSCI 2170",
-        "name": "Server Side Scripting",
-        "schedule": "Mon, Wed 10:00 AM - 11:30 AM",
-        "instructor": "Dr. Raghav Sampangi"
+        "course_code": "CSCI 1170",
+        "name": "Intro to Web Design & Dev",
+        "schedule": "Tue, Thu 5:35 PM - 6:55 PM",
+        "instructor": "M. Barrera Machuca"
     },
     {
-        "course_code": "CSCI 3172",
-        "name": "Web-Centric Computing",
-        "schedule": "Mon, Wed 10:00 AM - 11:30 AM",
-        "instructor": "Gabriella Mosquera"
+        "course_code": "CSCI 1315",
+        "name": "Discrete Math for CS",
+        "schedule": "Mon, Wed, Fri 11:35 AM - 12:25 PM",
+        "instructor": "C. DeGagne"
+    },
+    {
+        "course_code": "CSCI 3101",
+        "name": "Ethics & Prof Issues in CS",
+        "schedule": "Tue, Thu 10:05 AM - 11:25 AM",
+        "instructor": "M. Fortney"
+    },
+    {
+        "course_code": "CSCI 3110",
+        "name": "Algorithms I",
+        "schedule": "Wed, Fri 4:05 PM - 5:25 PM",
+        "instructor": "M. He"
+    },
+    {
+        "course_code": "CSCI 3120",
+        "name": "Operating Systems",
+        "schedule": "Tue, Thu 8:35 AM - 9:55 AM",
+        "instructor": "Q. Ye"
+    },
+    {
+        "course_code": "CSCI 3130",
+        "name": "Software Engineering",
+        "schedule": "Mon, Wed 11:35 AM - 12:55 PM",
+        "instructor": "M. Rahman"
+    },
+    {
+        "course_code": "CSCI 3161",
+        "name": "Intro to Comp Graphics",
+        "schedule": "Wed, Fri 10:05 AM - 11:25 AM",
+        "instructor": "S. Brooks"
+    },
+    {
+        "course_code": "CSCI 3181",
+        "name": "Advanced Topics in Machine Learning",
+        "schedule": "Tue, Thu 10:05 AM - 11:25 AM",
+        "instructor": "Zeh N."
+    },
+    {
+        "course_code": "CSCI 3205",
+        "name": "Distributed Systems",
+        "schedule": "Wed, Fri 2:35 PM - 3:55 PM",
+        "instructor": "Brooks S."
+    },
+    {
+        "course_code": "CSCI 3250",
+        "name": "Cybersecurity Threats",
+        "schedule": "Tue, Thu 11:35 AM - 12:55 PM",
+        "instructor": "Mosquera G."
+    },
+    {
+        "course_code": "CSCI 3310",
+        "name": "Data Structures and Algorithms",
+        "schedule": "Mon, Wed 10:05 AM - 11:25 AM",
+        "instructor": "He M."
+    },
+    {
+        "course_code": "CSCI 3411",
+        "name": "Ethics in Computing",
+        "schedule": "Tue, Thu 2:35 PM - 3:55 PM",
+        "instructor": "Rahman M."
+    },
+    {
+        "course_code": "CSCI 3425",
+        "name": "Blockchain Technologies",
+        "schedule": "Mon, Wed 4:05 PM - 5:25 PM",
+        "instructor": "Yang L."
+    },
+    {
+        "course_code": "CSCI 3510",
+        "name": "Introduction to Robotics",
+        "schedule": "Tue, Thu 8:35 AM - 9:55 AM",
+        "instructor": "Sampalli S."
+    },
+    {
+        "course_code": "CSCI 3600",
+        "name": "Intro to Quantum Computing",
+        "schedule": "Mon, Wed 1:35 PM - 2:55 PM",
+        "instructor": "Keselj V."
+    },
+    {
+        "course_code": "CSCI 3701",
+        "name": "Artificial Intelligence",
+        "schedule": "Tue, Thu 4:05 PM - 5:25 PM",
+        "instructor": "Copstein R."
+    },
+    {
+        "course_code": "CSCI 3750",
+        "name": "Mobile App Development",
+        "schedule": "Wed, Fri 3:05 PM - 4:25 PM",
+        "instructor": "Keselj V."
+    },
+    {
+        "course_code": "CSCI 4113",
+        "name": "Design and Analysis of Algorithms II",
+        "schedule": "Mon, Wed, Fri 11:35 AM - 12:25 PM",
+        "instructor": "Zeh N."
+    },
+    {
+        "course_code": "CSCI 4119",
+        "name": "Compact Data Structures",
+        "schedule": "Tue, Thu 10:05 AM - 11:25 AM",
+        "instructor": "Gagie T."
+    },
+    {
+        "course_code": "CSCI 4140",
+        "name": "Advanced Database Systems",
+        "schedule": "Mon, Wed 11:35 AM - 12:55 PM",
+        "instructor": "Bodorik P."
+    },
+    {
+        "course_code": "CSCI 4152",
+        "name": "Natural Language Processing",
+        "schedule": "Mon, Wed 4:05 PM - 5:25 PM",
+        "instructor": "Keselj V."
+    },
+    {
+        "course_code": "CSCI 4157",
+        "name": "Deep Speech Technologies",
+        "schedule": "Tue, Thu 2:35 PM - 3:55 PM",
+        "instructor": "Rudzicz F."
+    },
+    {
+        "course_code": "CSCI 4163",
+        "name": "Human-Computer Interaction",
+        "schedule": "Mon, Wed 2:35 PM - 3:55 PM",
+        "instructor": "Malloch J."
+    },
+    {
+        "course_code": "CSCI 4171",
+        "name": "Networks and Communication",
+        "schedule": "Tue, Thu 4:05 PM - 5:25 PM",
+        "instructor": "Sampalli S."
+    },
+    {
+        "course_code": "CSCI 4178",
+        "name": "Cyber Security & Defense",
+        "schedule": "Tue, Thu 11:35 AM - 12:55 PM",
+        "instructor": "Copstein R."
+    },
+    {
+        "course_code": "CSCI 4192",
+        "name": "Directed Studies",
+        "schedule": "Consult Department",
+        "instructor": "Arnold D."
+    },
+    {
+        "course_code": "CSCI 4193",
+        "name": "Technology Innovation",
+        "schedule": "Fri 11:35 AM - 2:25 PM",
+        "instructor": "Cochran A."
     }
 ]

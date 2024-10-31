@@ -11,34 +11,299 @@ body.bg-light-grey {
 
 .navbar,
 .footer {
-  background-color: white !important; /* White header and footer */
-  box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  background-color: white !important;
+  box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1);
 }
 
 h1,
 h2,
 h3 {
-  color: #ffcb00; /* Yellow for headings */
+  color: #ffcb00;
   font-weight: bold;
 }
+
+/* Button Styling */
 .btn-brand {
-  background-color: #ffcb00; /* Yellow button */
-  color: #000; /* White text */
-  border: none; /* No border */
+  background-color: #ffcb00;
+  color: #000;
+  border: none;
+  font-size: 1.1em;
+  padding: 10px 20px;
 }
 
 .btn-brand:hover {
-  background-color: #ffcb00; /* Yellow button */
-  color: #000; /* White text */
-  border: none; /* No border */
+  background-color: #ffb300;
+  color: #000;
 }
 
+/* Table and Card Styling */
 .table,
 .card {
-  background-color: #fff; /* White background for tables and cards */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Light shadow */
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
+/* Text Colors */
 .text-dark {
-  color: #000 !important; /* Black text */
+  color: #000 !important;
+}
+
+/* Responsive Table */
+.table-responsive {
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .btn-brand {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  .table {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 576px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 1.3em;
+    text-align: center;
+  }
+
+  .btn-brand {
+    width: 100%;
+  }
+
+  .table thead {
+    display: none; /* Hide table headers */
+  }
+
+  .table td {
+    display: block;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: calc(50% - 10px);
+    text-align: left;
+    font-weight: bold;
+  }
+}
+
+
+
+/* Notification Styles */
+.notification {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 300px;
+  max-width: 80%;
+  padding: 15px;
+  background-color: #28a745; /* Green for success */
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 1000;
+  transition: top 0.5s ease;
+}
+
+.notification.error {
+  background-color: #dc3545; /* Red for error */
+}
+
+.notification.show {
+  top: 20px; /* Slide down */
+}
+
+
+/* Smooth scrolling for the whole document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Initial state for fade-in effect */
+.fade-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Fade-in animation when element is in view */
+.fade-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Notification styling */
+.notification {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.notification.show {
+  opacity: 1;
+}
+.notification.error {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Header Links Hover Effect */
+h1 a, h2 a, h3 a, .navbar a, .footer a {
+  color: #000; /* Default color */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, .navbar a:hover, .footer a:hover {
+  color: #ffb300; /* Hover color */
+  transform: scale(1.05); /* Slightly scale up */
+}
+/* Button Hover Effect */
+.btn-brand, .btn-primary {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-brand:hover, .btn-primary:hover {
+  transform: scale(1.05); /* Slightly increase size */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+/* Specific Pop Effect for 'Add to Schedule' Button */
+.btn-primary:hover {
+  background-color: #ffb300; /* Change color on hover */
+  color: #fff; /* White text */
+  border-color: #ffb300; /* Match border color */
+  transform: scale(1.05); /* Slightly increase size */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow for emphasis */
+}
+/* Hover effect for action buttons (Drop and Logout) */
+.btn-danger,  .btn-sm {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-danger:hover, .btn-primary:hover, .btn-sm:hover {
+  transform: scale(1.05); /* Slightly increase size */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Specific Hover Effect for the "Logout" Button */
+.btn-danger:hover {
+  background-color: #d9534f; /* Darker red on hover */
+  color: #fff; /* White text on hover */
+}
+
+
+/* Styling for login page */
+
+
+/* Background and Glow Effect for the Login Container */
+.login-container {
+  background: linear-gradient(135deg, #755d99, #e2dbc9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2), 
+              0px 0px 15px rgba(255, 203, 0, 0.5); /* Soft glow effect */
+  max-width: 400px;
+  margin: 60px auto;
+  transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+  transform: scale(1.02); /* Slight scale-up on hover */
+}
+
+/* Text styling for the login heading */
+.login-heading {
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+/* Input field styling for a modern look */
+.login-input {
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.login-input:focus {
+  border-color: #ffb300;
+  box-shadow: 0px 0px 8px rgba(255, 203, 0, 0.8); /* Glowing border effect on focus */
+}
+
+/* Styling for the login button */
+.btn-login {
+  background-color: #ffb300;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  padding: 12px 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-login:hover {
+  background-color: #ffcb00;
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(255, 203, 0, 0.7); /* Stronger glow */
+}
+
+/* Styling for the error message */
+.login-error {
+  color: #d9534f;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* Label styling */
+.login-label {
+  font-weight: bold;
+  color: #555;
+  font-size: 1em;
+}
+
+/* Spacing adjustments around the input fields */
+.login-form .mb-3 {
+  margin-bottom: 1.5em;
+}
+
+/* Overall page background color */
+body.bg-light-grey {
+  background-color: #f4f5f7;
+}
+
+/* Adjusted font styling for inputs */
+.login-input, .login-label {
+  font-size: 1em;
 }

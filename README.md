@@ -16,9 +16,6 @@ dalhousie_timetable:
 - schedule: Links users to courses (user_id, course_id) for managing enrolled schedules.
 - users: Stores user information (username, password, created_at) for schedule management.
 
-university_schedule:
-
-- users: Holds user credentials (username, password) for login and authentication.
 
 
 ## Citations

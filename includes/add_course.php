@@ -28,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $user_id = $_SESSION['user_id'];
 
-    // Use $mysqli_course to check if the course exists in the `dalhousie_timetable` database
-    $stmt = $mysqli_course->prepare("SELECT id FROM courses WHERE course_code = ?");
+    // Use $mysqli_course to check if the course exists
+    $stmt = $mysqli->prepare("SELECT id FROM courses WHERE course_code = ?");
     if (!$stmt) {
         echo json_encode(['success' => false, 'error' => 'Database error: ' . $mysqli_course->error]);
         exit();
@@ -47,8 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->fetch();
     $stmt->close();
 
-    // Check if the course is already in the user's schedule in `dalhousie_timetable`
-    $stmt = $mysqli_course->prepare("SELECT id FROM schedule WHERE user_id = ? AND course_id = ?");
+    // Check if the course is already in the user's schedule
+    $stmt = $mysqli->prepare("SELECT id FROM schedule WHERE user_id = ? AND course_id = ?");
     if (!$stmt) {
         echo json_encode(['success' => false, 'error' => 'Database error: ' . $mysqli_course->error]);
         exit();
@@ -64,8 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $stmt->close();
 
-    // Add course to user's schedule in `dalhousie_timetable`
-    $stmt = $mysqli_course->prepare("INSERT INTO schedule (user_id, course_id) VALUES (?, ?)");
+    // Add course to user's schedule
+    $stmt = $mysqli->prepare("INSERT INTO schedule (user_id, course_id) VALUES (?, ?)");
     if (!$stmt) {
         echo json_encode(['success' => false, 'error' => 'Database error: ' . $mysqli_course->error]);
         exit();
