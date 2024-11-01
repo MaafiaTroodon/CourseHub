@@ -12,6 +12,43 @@ include('../includes/header.php');
 <div id="notification" class="notification"></div>
 <main class="container">
     <h1 class="mb-4">Available Courses</h1>
+    <div class="container mt-3">
+    <button id="filter-toggle" class="btn btn-outline-secondary mb-3">Filter Courses</button>
+    <div id="filter-options" class="d-none">
+        <!-- Search bar for Course Code -->
+        <div class="input-group mb-3">
+            <input type="text" id="search-bar" class="form-control" placeholder="Search by Course Code">
+            <button class="btn btn-primary" onclick="applyFilters()">Search</button>
+        </div>
+
+        <!-- Day filters -->
+        <div class="mb-3">
+            <label>Filter by Days:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Mon" id="filter-mon">
+                <label class="form-check-label" for="filter-mon">Monday</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Tue" id="filter-tue">
+                <label class="form-check-label" for="filter-tue">Tuesday</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Wed" id="filter-wed">
+                <label class="form-check-label" for="filter-wed">Wednesday</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Thu" id="filter-thu">
+                <label class="form-check-label" for="filter-thu">Thursday</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Fri" id="filter-fri">
+                <label class="form-check-label" for="filter-fri">Friday</label>
+            </div>
+            <button class="btn btn-primary mt-2" onclick="applyFilters()">Apply Filters</button>
+        </div>
+    </div>
+</div>
+
     <div class="table-responsive">
         <table class="table table-striped table-hover">
             <thead class="bg-light">
@@ -94,6 +131,58 @@ function addToSchedule(courseCode) {
         showNotification('An error occurred. Please check the console for details.', 'error');
     });
 }
+
+// javascript for filter course functionality 
+document.addEventListener("DOMContentLoaded", function () {
+    const filterToggle = document.getElementById("filter-toggle");
+    const filterOptions = document.getElementById("filter-options");
+
+    // Toggle filter options visibility
+    filterToggle.addEventListener("click", function () {
+        filterOptions.classList.toggle("d-none");
+    });
+});
+
+// Function to apply filters and fetch filtered courses asynchronously
+function applyFilters() {
+    const searchTerm = document.getElementById("search-bar").value;
+    const days = ["Mon", "Tue", "Wed", "Thu", "Fri"].filter(day => 
+        document.getElementById(`filter-${day.toLowerCase()}`).checked
+    );
+
+    fetch('../includes/filter_course.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ searchTerm, days })
+    })
+    .then(response => response.json())
+    .then(courses => {
+        updateCourseTable(courses);
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+// Function to update the course table with filtered results
+function updateCourseTable(courses) {
+    const courseTable = document.getElementById("course-table");
+    courseTable.innerHTML = ""; // Clear existing courses
+
+    courses.forEach(course => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${course.course_code}</td>
+            <td>${course.course_name}</td> <!-- Updated field name -->
+            <td>${course.instructor}</td>
+            <td>${course.schedule}</td>
+            <td><button class="btn btn-primary" onclick="addToSchedule('${course.course_code}')">Add to Schedule</button></td>
+        `;
+        courseTable.appendChild(row);
+    });
+}
+
+
 </script>
 
 

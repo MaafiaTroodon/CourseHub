@@ -30,6 +30,30 @@
         "instructor": "C. DeGagne"
     },
     {
+        "course_code": "CSCI 2110",
+        "name": "Data Structures",
+        "schedule": "Tue, Thu 9:00 AM - 10:30 AM",
+        "instructor": "Dr. Srini Sampalli"
+    },
+    {
+        "course_code": "CSCI 2141",
+        "name": "Databases",
+        "schedule": "Mon, Wed 10:00 AM - 11:30 AM",
+        "instructor": "Bharat Shankaranarayanan"
+    },
+    {
+        "course_code": "CSCI 2201",
+        "name": "Information Security",
+        "schedule": "Tue, Thu 10:00 AM - 11:30 AM",
+        "instructor": "Dr. Israat Haque"
+    },
+    {
+        "course_code": "CSCI 2170",
+        "name": "Server Side Scripting",
+        "schedule": "Mon, Wed 10:00 AM - 11:30 AM",
+        "instructor": "Dr. Raghav Sampangi"
+    },
+    {
         "course_code": "CSCI 3101",
         "name": "Ethics & Prof Issues in CS",
         "schedule": "Tue, Thu 10:05 AM - 11:25 AM",

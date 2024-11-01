@@ -307,3 +307,36 @@ body.bg-light-grey {
 .login-input, .login-label {
   font-size: 1em;
 }
+
+
+/* CSS for the filter button */
+/* Filter Toggle Button */
+#filter-toggle {
+  background-color: #A5B68D;
+  color: white;
+}
+
+/* Filter Options Styling */
+#filter-options {
+  background-color: #F6EFBD;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#filter-options input[type="text"],
+#filter-options .form-check-label {
+  color: #333;
+}
+
+#filter-options button {
+  background-color: #D6C0B3;
+  color: #333;
+}
+
+#filter-options button:hover {
+  background-color: #DBD3D3;
+  color: #333;
+}
+
+

@@ -2,9 +2,9 @@
 
 ## Student Information
 
-- **Name**: [Enter your name here]
-- **Student ID**: [Enter your student ID here]
-- **Date Created**: [Enter the date you created this assignment]
+- **Name**: Malhar Datta Mahajan
+- **Student ID**: B00934337
+- **Date Created**: 1 November 2024
 
 ## Overview
 

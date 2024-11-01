@@ -21,16 +21,6 @@ include('../includes/header.php');
 $last_login_time = isset($_COOKIE['last_login_time']) ? $_COOKIE['last_login_time'] : 'First time login';
 $user_id = $_SESSION['user_id'];
 
-// Fetch username if not set in session
-if (!isset($_SESSION['username'])) {
-    $stmt = $mysqli->prepare("SELECT username FROM users WHERE id = ?");
-    $stmt->bind_param("i", $user_id);
-    $stmt->execute();
-    $stmt->bind_result($username);
-    $stmt->fetch();
-    $_SESSION['username'] = $username;
-    $stmt->close();
-}
 
 // Fetch the user's schedule from the `schedule` table
 $schedule = [];

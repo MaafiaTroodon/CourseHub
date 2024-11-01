@@ -24,34 +24,33 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <body class="bg-light-grey">
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <a class="navbar-brand" href="index.php">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHV0yTI5pWCUHLmQNLX3KdArcOxWUPBArzfg&s"
                     alt="Dalhousie Logo" height="40">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <?php
-                    // Check if the user is logged in by verifying if 'user_id' is set in the session
-                    if (isset($_SESSION['user_id'])): 
-                    ?>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="dashboard.php">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="logout.php">Logout</a>
-                        </li>
-                    <?php else: ?>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark btn btn-brand" href="login.php">Login</a>
-                        </li>
-                    <?php endif; ?>
-                </ul>
-            </div>
+    <ul class="navbar-nav ms-auto">
+        <?php
+        // Check if the user is logged in by verifying if 'user_id' is set in the session
+        if (isset($_SESSION['user_id'])): 
+        ?>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="index.php">Course Schedule</a> <!-- Link to index.php when logged in -->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="dashboard.php">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="logout.php">Logout</a>
+            </li>
+        <?php else: ?>
+            <li class="nav-item">
+                <a class="nav-link text-dark btn btn-brand" href="login.php">Login</a>
+            </li>
+        <?php endif; ?>
+    </ul>
+</div>
+
         </div>
     </nav>
     <div class="container mt-5">
